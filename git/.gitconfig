@@ -11,6 +11,7 @@
 	br = branch
 	ci = commit
 	switch = sw
+	ol = log --oneline
 [user]
 	name = HamadaTomoki
 	email = hamada.tomoki01@gmail.com
