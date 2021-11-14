@@ -1,3 +1,7 @@
-export git=https://github.com/HamadaTomoki
 export GOPATH=$HOME
-PATH=$PATH:$GOPATH/bin
+export MY_COMMANDS=~/config/linux/bin
+export git='git@github.com:HamadaTomoki'
+
+PATH=$PATH:$GOPATH/bin:$MY_COMMANDS
+
+source $MY_COMMANDS/z.sh
