@@ -23,7 +23,7 @@ alias sqlp2='sqlplus system@\"localhost:1521/orcldb\"'
 # 例) glgp develop develop2
 alias glgp='git log --graph --pretty=format:"%h %s" master'
 
-alias gitini='git init . && git add .&& git commit --allow-empty -m "first commit" && hub create && git push -u origin master'
+alias gitini='git init . && git add .&& git commit --allow-empty -m "first commit" && hub create && git push -u origin main'
 alias gitpull='for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done & git fetch --all & git pull --all'
 alias giton='git config --global http.proxy http://ohs90223:argon3-3@proxy01.osaka.hal.ac.jp:8080'
 alias gitoff='git config --global --unset http.proxy'
