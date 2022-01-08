@@ -13,6 +13,11 @@ alias szp='source ~/.zprofile'
 alias vimzr='vim ~/.zshrc'
 alias szr='source ~/.zshrc'
 
+alias gadd='git add'
+alias gst='git status'
+alias glog='git log'
+alias gci='git commit'
+
 # oracle
 alias sqlp='sqlplus hamadatomoki@\"localhost:1521/orcldb\"'
 alias sqlp2='sqlplus system@\"localhost:1521/orcldb\"'
@@ -74,3 +79,4 @@ function gitRef() {
 	git remote remove origin
 	git remote add origin git@github.com:HamadaTomoki/$1.git
 }
+clear
