@@ -7,22 +7,13 @@ alias txt='touch ~/Desktop/memo.txt'
 alias md='touch ~/Desktop/README.md'
 
 # edit config
-alias vpr='vim ~/.zprofile'
-alias vrc='vim ~/.zshrc'
+alias vpr='vim ~/config/linux/.zprofile'
+alias vrc='vim ~/config/linux/.zshrc'
 alias spr='source ~/.zprofile'
 alias src='source ~/.zshrc'
 
-alias gdf='git diff'
-alias gad='git add'
-alias gst='git status'
-alias glg='git log'
-alias gci='git commit'
-alias gco='git checkout'
-alias gsw='git switch'
-alias gbr='git branch'
-alias gps='git push'
-alias gpl='git pull'
-alias gcl='git clone'
+alias g='git'
+
 
 # oracle
 alias sqlp='sqlplus hamadatomoki@\"localhost:1521/orcldb\"'
@@ -76,10 +67,6 @@ zle clear-screen
 }
 zle -N peco-src
 bindkey '^G' peco-src
-
-. ~/shell/z/z.sh
-alias j=z
-
 
 function gitRef() {
 	git remote remove origin
