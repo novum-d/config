@@ -1,3 +1,8 @@
+# sync
+\cp -f ~/config/linux/.vimrc ~/
+
+
+
 # template
 alias ll='ls -al'
 alias end='sudo shutdown -h now'
@@ -72,4 +77,8 @@ function gitRef() {
 	git remote remove origin
 	git remote add origin git@github.com:HamadaTomoki/$1.git
 }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+ZSH_THEME="powerlevel10k/powerlevel10k"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 clear
