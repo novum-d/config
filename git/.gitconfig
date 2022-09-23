@@ -1,5 +1,6 @@
 [core]
-	excludesfile = /Users/hamadatomoki/.gitignore_global
+        editor = vim
+	excludesfile = ~/hamadatomoki/.gitignore_global
 [color]
 	ui = true
 [alias]
@@ -15,18 +16,13 @@
 [user]
 	name = HamadaTomoki
 	email = hamada.tomoki01@gmail.com
-[filesystem "AdoptOpenJDK|11.0.7|/dev/disk1s1"]
-	timestampResolution = 14000 nanoseconds
-	minRacyThreshold = 0 nanoseconds
-[https]
-	proxy = 
 [init]
-	defaultBranch = master
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	defaultBranch = main
 [commit]
-	template = /Users/hamadatomoki/.stCommitMsg
+	template = ~/config/git/.gitemoji
+[ghq]
+  root = ~/IdeaProjects/kotlin-playground
+  root = ~/IdeaProjects/kotlin-server-side
+  root = ~/config
+  root = ~/AndroidStudioProjects/android-st31
+  root = ~/Documents/md

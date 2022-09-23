@@ -1,5 +1,6 @@
 # sync
 \cp -f ~/config/linux/.vimrc ~/
+\cp -f ~/config/git/.gitconfig ~/
 
 
 
@@ -80,5 +81,5 @@ function gitRef() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 ZSH_THEME="powerlevel10k/powerlevel10k"
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 clear
