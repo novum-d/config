@@ -1,6 +1,7 @@
 # sync
 \cp -f ~/config/linux/.vimrc ~/
 \cp -f ~/config/git/.gitconfig ~/
+\cp -f ~/config/git/.gitemoji ~/
 
 
 
