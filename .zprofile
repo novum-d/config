@@ -1,5 +1,5 @@
 export GOPATH=$HOME
-export MY_COMMANDS=~/config/linux/bin
+export MY_COMMANDS=~/config/bin
 export git='git@github.com:HamadaTomoki'
 export RUST_PATH=~/.cargo/bin
 
