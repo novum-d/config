@@ -1,8 +1,6 @@
 [ghq]
-  root = ~/IdeaProjects/kotlin-playground
-  root = ~/IdeaProjects/kotlin-server-side
-  root = ~/config
-  root = ~/AndroidStudioProjects/android-st31
-  root = ~/Documents/md
-  root = ~/docker
-  root = ~/IdeaProjects/cresell-inspire-the-next
+  root = $HOME
+  root = $HOME/IdeaProjects
+  root = $HOME/AndroidStudioProjects
+  root = $HOME/Documents
+  root = $HOME/repos
