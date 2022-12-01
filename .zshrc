@@ -1,3 +1,4 @@
+export RUST_BACKTRACE=1
 # sync
 \cp -f ~/config/.vimrc ~/
 \cp -f ~/config/git/.gitemoji ~/
