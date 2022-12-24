@@ -7,12 +7,16 @@
 	see = browse
 	pr = pull-request
 	co = checkout
+	pl = pull
+	psh = push
 	st = status
 	sw = switch
 	br = branch
 	ci = commit
 	switch = sw
-	ol = log --oneline
+	l = log
+	lo = log --oneline
+	lg = log --graph --oneline --decorate=full
 [user]
 	name = HamadaTomoki
 	email = hamada.tomoki01@gmail.com
