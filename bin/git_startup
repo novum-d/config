@@ -9,5 +9,8 @@ git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.sw switch
 git config --global alias.st status
-git config --global alias.oneline '!g log --oneline'
-git config --global alias.amend '!g ci --amend'
+git config --global alias.ph push
+git config --global alias.pl pull
+git config --global alias.l '!git log'
+git config --global alias.lo '!git log --oneline'
+git config --global alias.lg '!git log --graph --oneline --decorate=full'

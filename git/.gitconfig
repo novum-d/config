@@ -8,15 +8,14 @@
 	pr = pull-request
 	co = checkout
 	pl = pull
-	psh = push
+	ph = push
 	st = status
 	sw = switch
 	br = branch
 	ci = commit
-	switch = sw
 	l = log
 	lo = log --oneline
-	lg = log --graph --oneline --decorate=full
+	log = log --graph --oneline --decorate=full
 [user]
 	name = HamadaTomoki
 	email = hamada.tomoki01@gmail.com
@@ -24,9 +23,3 @@
 	defaultBranch = main
 [commit]
 	template = ~/config/git/.gitemoji
-[ghq]
-  root = ~/IdeaProjects/kotlin-playground
-  root = ~/IdeaProjects/kotlin-server-side
-  root = ~/config
-  root = ~/AndroidStudioProjects/android-st31
-  root = ~/Documents/md
