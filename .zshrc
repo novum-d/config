@@ -9,16 +9,17 @@ source ~/config/.zprofile
 
 # template
 alias ll='ls -al'
-alias end='sudo shutdown -h now'
+alias ed='sudo shutdown -h now'
 
 # create file
 alias txt='touch ~/Desktop/memo.txt'
 alias md='touch ~/Desktop/README.md'
 
 # edit config
-alias src='source ~/.zshrc'
+alias sz='source ~/.zshrc && source ~/.zprofile'
 
 alias g='git'
+alias dc='docker-compose'
 
 
 # oracle
