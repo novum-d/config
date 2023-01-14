@@ -10,7 +10,8 @@ source ~/config/.zprofile
 # template
 alias ll='ls -al'
 alias ed='sudo shutdown -h now'
-alias pg='docker compose -f ~/repos/docker/postgres/docker-compose.yml up -d'
+alias up='docker compose -f ~/repos/docker/postgres/docker-compose.yml up -d'
+alias down='docker compose -f ~/repos/docker/postgres/docker-compose.yml down'
 
 # create file
 alias txt='touch ~/Desktop/memo.txt'
