@@ -1,19 +1,23 @@
 
 # node
+NODE_VERSION=18.13.0
 asdf plugin add nodejs
-asdf install nodejs 14.0.0
-asdf global nodejs 14.0.0
+asdf install nodejs $NODE_VERSION
+asdf global nodejs $NODE_VERSION
 
 # erlang
+ERLANG_VERSION=25.2
 asdf plugin add erlang
-asdf install erlang 25.2
+asdf install erlang $ERLANG_VERSION
+asdf global install erlang $ERLANG_VERSION
 asdf global erlang 25.2
 
 # elixir 
+ELIXIR_VERSION=1.14.2-otp-25
 asdf plugin add elixir
-asdf install elixir 1.14.2-otp-25
-asdf global elixir 1.14.2-otp-25
+asdf install elixir $ELIXIR_VERSION
+asdf global elixir $ELIXIR_VERSION
 
 # phoenix
-mix local.hex
-mix archive.install hex phx_new
+mix local.hex --force
+mix archive.install hex phx_new --force
