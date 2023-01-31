@@ -9,6 +9,9 @@ git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.sw switch
 git config --global alias.st status
+git config --global alias.rt reset
+git config --global alias.rth '!git reset --hard'
+git config --global alias.ad add
 git config --global alias.ph push
 git config --global alias.pl pull
 git config --global alias.l '!git log'
