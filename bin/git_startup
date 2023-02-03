@@ -1,19 +1,26 @@
 #!/bin/zsh
 
+git config --global core.editor vim
+
 git config --global user.name "hamadatomoki"
 git config --global user.email hamada.tomoki01@gmail.com
 
+# alias
+## git
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.sw switch
 git config --global alias.st status
-git config --global alias.rt reset
-git config --global alias.rth '!git reset --hard'
+git config --global alias.rs reset
+git config --global alias.rsh '!git reset --hard'
 git config --global alias.ad add
 git config --global alias.ph push
 git config --global alias.pl pull
-git config --global alias.l '!git log'
-git config --global alias.lo '!git log --oneline'
-git config --global alias.lg '!git log --graph --oneline --decorate=full'
+git config --global alias.lo '!git log'
+git config --global alias.lol '!git log --oneline'
+git config --global alias.lod '!git log --graph --oneline --decorate=full'
+
+## gh
+gh alias set br 'browse'
