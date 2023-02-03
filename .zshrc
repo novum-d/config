@@ -1,4 +1,5 @@
 export RUST_BACKTRACE=1
+
 # sync
 \cp -f ~/config/.vimrc ~/
 \cp -f ~/config/git/.gitemoji ~/
@@ -12,6 +13,7 @@ alias ll='ls -al'
 alias ed='sudo shutdown -h now'
 alias up='docker compose -f ~/repos/docker/postgres/docker-compose.yml up -d'
 alias down='docker compose -f ~/repos/docker/postgres/docker-compose.yml down'
+~/config/bin/git_startup
 
 # create file
 alias txt='touch ~/Desktop/memo.txt'
@@ -21,7 +23,6 @@ alias md='touch ~/Desktop/README.md'
 alias sz='source ~/.zshrc && source ~/.zprofile'
 
 alias g='git'
-alias dc='docker-compose'
 
 
 # oracle
@@ -29,15 +30,7 @@ alias sqlp='sqlplus hamadatomoki@\"localhost:1521/orcldb\"'
 alias sqlp2='sqlplus system@\"localhost:1521/orcldb\"'
 
 
-# masterブランチからのコミット履歴を再帰的にたどるglgpコマンド
-# 使い方：glgp masterブランチからの履歴
-# 例) glgp develop develop2
-alias glgp='git log --graph --pretty=format:"%h %s" master'
-
-alias gitini='git init . && git add . && git commit --allow-empty -m "Initial commit" && hub create && git push -u origin main'
 alias gitpull='for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done & git fetch --all & git pull --all'
-alias giton='git config --global http.proxy http://ohs90223:argon3-3@proxy01.osaka.hal.ac.jp:8080'
-alias gitoff='git config --global --unset http.proxy'
 
 
 function regex () {
