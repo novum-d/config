@@ -2,7 +2,6 @@ export RUST_BACKTRACE=1
 
 # sync
 \cp -f ~/config/.vimrc ~/
-\cp -f ~/config/git/.gitemoji ~/
 \cp -f ~/.vscode/.workspace ~/.vscode/
 
 
@@ -13,7 +12,7 @@ alias ll='ls -al'
 alias ed='sudo shutdown -h now'
 alias up='docker compose -f ~/repos/docker/postgres/docker-compose.yml up -d'
 alias down='docker compose -f ~/repos/docker/postgres/docker-compose.yml down'
-~/config/bin/git_startup
+~/config/git/git_startup
 
 # create file
 alias txt='touch ~/Desktop/memo.txt'
