@@ -29,6 +29,7 @@ git config --global commit.template ~/config/git/template/commit_message
 ## gh
 gh config set editor vim
 gh alias set br 'browse'
+gh alias set --shell bri 'gh issue view --web $1'
 gh alias set is 'issue'
 gh alias set cr 'create'
 gh alias set --shell isc 'gh issue create --title "$1" --assignee "@me" -F ~/config/git/template/issue_basic.md && gh issue list --state=open --limit=1'
