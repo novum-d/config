@@ -9,6 +9,8 @@ source ~/config/.zprofile
 
 # template
 alias ll='ls -al'
+alias dcp='docker compose'
+alias g='git'
 alias ed='sudo shutdown -h now'
 alias up='docker compose -f ~/repos/docker/postgres/docker-compose.yml up -d'
 alias down='docker compose -f ~/repos/docker/postgres/docker-compose.yml down'
@@ -21,7 +23,6 @@ alias md='touch ~/Desktop/README.md'
 # edit config
 alias sz='source ~/.zshrc && source ~/.zprofile'
 
-alias g='git'
 
 
 # oracle

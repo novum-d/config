@@ -9,10 +9,10 @@ asdf global github-cli latest
 # package tools
 
 ## node
-NODE_VERSION=18.13.0
-asdf plugin add nodejs
-asdf install nodejs $NODE_VERSION
-asdf global nodejs $NODE_VERSION
+# NODE_VERSION=18.13.0
+# asdf plugin add nodejs
+# asdf install nodejs $NODE_VERSION
+# asdf global nodejs $NODE_VERSION
 
 # programming language
 
@@ -20,8 +20,7 @@ asdf global nodejs $NODE_VERSION
 ERLANG_VERSION=25.2
 asdf plugin add erlang
 asdf install erlang $ERLANG_VERSION
-asdf global install erlang $ERLANG_VERSION
-asdf global erlang 25.2
+asdf global erlang $ERLANG_VERSION
 
 ## elixir 
 ELIXIR_VERSION=1.14.2-otp-25
@@ -30,7 +29,8 @@ asdf install elixir $ELIXIR_VERSION
 asdf global elixir $ELIXIR_VERSION
 
 # phoenix
+PHOENIX_VERSION=1.7.0-rc.2
 mix local.hex --force
-mix archive.install hex phx_new --force
+mix archive.install hex phx_new 1.7.0-rc.2 --force
 
 
