@@ -1,5 +1,15 @@
 # utils
 
+## peco
+asdf plugin add peco https://github.com/asdf-community/asdf-peco.git
+asdf install peco latest
+asdf global peco latest
+
+## ghq
+asdf plugin-add ghq https://github.com/kajisha/asdf-ghq
+asdf install ghq latest
+asdf global ghq latest
+
 ## github-cli
 asdf plugin-add github-cli https://github.com/bartlomiejdanek/asdf-github-cli.git
 asdf install github-cli latest
