@@ -2,6 +2,7 @@ export RUST_BACKTRACE=1
 
 # sync
 \cp -f ~/config/.vimrc ~/
+\cp -f ~/config/nvim ~/.config
 \cp -f ~/.vscode/.workspace ~/.vscode/
 
 
@@ -11,6 +12,7 @@ source ~/config/.zprofile
 alias ll='ls -al'
 alias dcp='docker compose'
 alias g='git'
+alias n='nvim'
 alias ed='sudo shutdown -h now'
 alias up='docker compose -f ~/repos/docker/postgres/docker-compose.yml up -d'
 alias down='docker compose -f ~/repos/docker/postgres/docker-compose.yml down'

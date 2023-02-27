@@ -1,5 +1,22 @@
 # utils
 
+## fd
+asdf plugin add fd
+asdf install fd latest
+asdf global fd latest
+fd --type f .conf /etc
+
+## lazygit
+asdf plugin add lazygit https://github.com/nklmilojevic/asdf-lazygit.git
+asdf install lazygit latest
+asdf global lazygit latest
+
+## rigrep
+asdf plugin add ripgrep
+asdf install ripgrep latest
+asdf global ripgrep latest
+rg
+
 ## peco
 asdf plugin add peco https://github.com/asdf-community/asdf-peco.git
 asdf install peco latest
