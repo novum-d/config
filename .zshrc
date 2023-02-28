@@ -3,7 +3,7 @@ export RUST_BACKTRACE=1
 # sync
 \cp -rf ~/config/.vimrc ~/
 \cp -rf ~/config/nvim ~/.config
-\cp -rf ~/.vscode/.workspace ~/.vscode/
+\cp -rf ~/config/.wezterm.lua ~/
 
 
 source ~/config/.zprofile
