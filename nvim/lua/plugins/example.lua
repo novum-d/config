@@ -143,6 +143,12 @@ return {
       ensure_installed = {
         "bash",
         "help",
+        "eex",
+        "elixir",
+        "erlang",
+        "heex",
+        "html",
+        "surface",
         "html",
         "javascript",
         "json",
@@ -157,6 +163,7 @@ return {
         "vim",
         "yaml",
       },
+      highlight = { enable = true },
     },
   },
 
