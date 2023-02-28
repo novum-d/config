@@ -1,9 +1,9 @@
 export RUST_BACKTRACE=1
 
 # sync
-\cp -f ~/config/.vimrc ~/
-\cp -f ~/config/nvim ~/.config
-\cp -f ~/.vscode/.workspace ~/.vscode/
+\cp -rf ~/config/.vimrc ~/
+\cp -rf ~/config/nvim ~/.config
+\cp -rf ~/.vscode/.workspace ~/.vscode/
 
 
 source ~/config/.zprofile
