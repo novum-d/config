@@ -1,0 +1,13 @@
+{
+  "name": "elixir",
+  "version": "1.14.2",
+  "description": "Elixir code snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "elixir",
+        "path": "./elixiri.json"
+      }
+    ]
+  }
+}
