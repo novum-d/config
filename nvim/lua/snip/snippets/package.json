@@ -6,7 +6,7 @@
     "snippets": [
       {
         "language": "elixir",
-        "path": "./elixiri.json"
+        "path": "./elixir.json"
       }
     ]
   }
