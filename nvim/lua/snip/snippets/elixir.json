@@ -156,5 +156,10 @@
     "prefix": "m",
     "body": "%{\"${1}\" => ${2}}",
     "description": "Elixir map"
+  },
+  "eex_tag": {
+    "prefix": "e=",
+    "body": "<%= ${1} %>",
+    "description": "eex tag"
   }
 }

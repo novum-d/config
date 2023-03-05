@@ -6,6 +6,10 @@ return {
       local elixir = require("elixir")
 
       elixir.setup({
+        settings = elixir.settings({
+          dialyzerEnabled = false,
+          enableTestLenses = false,
+        }),
         log_level = vim.lsp.protocol.MessageType.Log,
         message_level = vim.lsp.protocol.MessageType.Log,
         on_attach = function(client, bufnr)
