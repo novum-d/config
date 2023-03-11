@@ -4,7 +4,7 @@ return {
   { "hrsh7th/cmp-nvim-lsp" },
   { "saadparwaiz1/cmp_luasnip" },
   { "rafamadriz/friendly-snippets" },
-
+  { "mattn/emmet-vim" },
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
@@ -17,7 +17,6 @@ return {
             "typescriptreact",
             "javascriptreact",
             "css",
-            "elixir",
             "sass",
             "scss",
             "less",
