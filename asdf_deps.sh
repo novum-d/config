@@ -1,5 +1,10 @@
 # utils
 
+## zellij
+asdf plugin add zellij https://github.com/chessmango/asdf-zellij.git
+asdf install zellij latest
+asdf global zellij latest
+
 ## fd
 asdf plugin add fd
 asdf install fd latest
