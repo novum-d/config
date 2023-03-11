@@ -1,5 +1,10 @@
 # utils
 
+## zoxide 
+asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
+asdf install zoxide latest
+asdf global zoxide latest
+
 ## zellij
 asdf plugin add zellij https://github.com/chessmango/asdf-zellij.git
 asdf install zellij latest
