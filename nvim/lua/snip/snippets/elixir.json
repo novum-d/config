@@ -158,8 +158,8 @@
     "description": "Elixir map"
   },
   "eex_tag": {
-    "prefix": "e=",
-    "body": "<%= ${1} %>",
+    "prefix": "eex",
+    "body": "<%= @${1} %>",
     "description": "eex tag"
   }
 }
