@@ -1,4 +1,8 @@
 # utils
+## fzf 
+asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
+asdf install fzf latest
+asdf global fzf latest
 
 ## zoxide 
 asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git

@@ -80,5 +80,6 @@ function gitRef() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 ZSH_THEME="powerlevel10k/powerlevel10k"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+eval "$(zoxide init zsh)"
 
 clear
