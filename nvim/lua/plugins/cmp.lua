@@ -4,6 +4,7 @@ return {
   { "hrsh7th/cmp-nvim-lsp" },
   { "saadparwaiz1/cmp_luasnip" },
   { "rafamadriz/friendly-snippets" },
+  { "github/copilot.vim" },
   { "mattn/emmet-vim" },
   {
     "neovim/nvim-lspconfig",

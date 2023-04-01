@@ -1,10 +1,10 @@
 # utils
-## fzf 
+## fzf
 asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
 asdf install fzf latest
 asdf global fzf latest
 
-## zoxide 
+## zoxide
 asdf plugin add zoxide https://github.com/nyrst/asdf-zoxide.git
 asdf install zoxide latest
 asdf global zoxide latest
@@ -46,14 +46,12 @@ asdf plugin-add github-cli https://github.com/bartlomiejdanek/asdf-github-cli.gi
 asdf install github-cli latest
 asdf global github-cli latest
 
-
 # package tools
 
 ## node
-# NODE_VERSION=18.13.0
-# asdf plugin add nodejs
-# asdf install nodejs $NODE_VERSION
-# asdf global nodejs $NODE_VERSION
+asdf plugin add nodejs
+asdf install nodejs latest
+asdf global nodejs latest
 
 # programming language
 
@@ -63,7 +61,7 @@ asdf plugin add erlang
 asdf install erlang $ERLANG_VERSION
 asdf global erlang $ERLANG_VERSION
 
-## elixir 
+## elixir
 ELIXIR_VERSION=1.14.2-otp-25
 asdf plugin add elixir
 asdf install elixir $ELIXIR_VERSION
@@ -73,5 +71,3 @@ asdf global elixir $ELIXIR_VERSION
 PHOENIX_VERSION=1.7.0-rc.2
 mix local.hex --force
 mix archive.install hex phx_new 1.7.0-rc.2 --force
-
-
