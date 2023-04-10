@@ -1,10 +1,31 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    init_options = {
-      userLanguages = {
-        eelixir = "html-eex",
-        rust = "html",
+    opts = {
+      servers = {
+        tailwindcss = {
+          filetypes = {
+            "css",
+            "scss",
+            "sass",
+            "postcss",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "svelte",
+            "vue",
+            "rust",
+            "rs",
+          },
+          init_options = {
+            userLanguages = {
+              eelixir = "html-eex",
+              rust = "html",
+            },
+          },
+        },
       },
     },
   },
