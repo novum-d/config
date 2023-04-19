@@ -23,7 +23,7 @@ alias ll='ls -al'
 alias dcp='docker compose'
 alias g='git'
 alias n='nvim'
-~/config/git/git_startup
+# ~/config/git/git_startup
 
 # create file
 alias txt='touch ~/Desktop/memo.txt'

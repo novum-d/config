@@ -1,6 +1,11 @@
 local wezterm = require("wezterm")
+local config = {}
 
-return {
-	color_scheme = "TerminixDark (Gogh)",
-	warn_about_missing_glyphs = false,
-}
+if wezterm.config_builder then
+	config = wezterm.config_builder()
+end
+
+config.color_scheme = "s3r0 modified (terminal.sexy)"
+config.warn_about_missing_glyphs = false
+
+return config
