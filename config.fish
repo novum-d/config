@@ -2,12 +2,16 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-fish_add_path $HOME/Library/Android/sdk/platform-tools
+
+if test (uname -s) = "Darwin"
+  fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+  fish_add_path $HOME/Library/Android/sdk/platform-tools
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  source /opt/homebrew/opt/asdf/libexec/asdf.fish
+end
+
 fish_add_path $HOME/.cargo/bin
 
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 
 set RUST_BACKTRACE 1
