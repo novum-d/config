@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # git
-git config --global core.editor vim
+git config --global core.editor nvim
 
 git config --global user.name novum-d
 git config --global user.email hamada.tomoki01@gmail.com
@@ -27,7 +27,7 @@ git config --global init.defaultBranch main
 git config --global commit.template ~/config/git/template/commit_message
 
 ## gh
-gh config set editor vim
+gh config set editor nvim
 gh alias set br 'browse'
 gh alias set --shell bri 'gh issue view --web $1'
 gh alias set is 'issue'

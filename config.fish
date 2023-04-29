@@ -3,10 +3,9 @@ if status is-interactive
 end
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-fish_add_path $HOME/Library/Application Support/JetBrains/Toolbox/scripts
+fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 fish_add_path $HOME/Library/Android/sdk/platform-tools
 fish_add_path $HOME/.cargo/bin
-fish_add_path $HOME/Library/Application Support/JetBrains/Toolbox/scripts
 
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
