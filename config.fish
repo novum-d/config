@@ -3,15 +3,17 @@ if status is-interactive
 end
 
 
-if test (uname -s) = "Darwin"
-  fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-  fish_add_path $HOME/Library/Android/sdk/platform-tools
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  source /opt/homebrew/opt/asdf/libexec/asdf.fish
+if test (uname -s) = Darwin
+    fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+    fish_add_path $HOME/Library/Android/sdk/platform-tools
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    source /opt/homebrew/opt/asdf/libexec/asdf.fish
+else
+    source ~/.asdf/asdf.fish
 end
 
 fish_add_path $HOME/.cargo/bin
-
+set -g theme_nerd_fonts yes
 
 
 set RUST_BACKTRACE 1
@@ -33,13 +35,13 @@ alias txt='touch ~/Desktop/memo.txt'
 alias md='touch ~/Desktop/README.md'
 
 function ghq_fzf_repo -d 'Repository search'
-  ghq list --full-path | fzf --reverse --height=100% | read select
-  [ -n "$select" ]; and cd "$select"
-  echo " $select "
-  commandline -f repaint
+    ghq list --full-path | fzf --reverse --height=100% | read select
+    [ -n "$select" ]; and cd "$select"
+    echo " $select "
+    commandline -f repaint
 end
 
 # fish key bindings
 function fish_user_key_bindings
-  bind \cg ghq_fzf_repo
+    bind \cg ghq_fzf_repo
 end
