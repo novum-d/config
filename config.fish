@@ -22,6 +22,7 @@ set RUST_BACKTRACE 1
 cp -rf ~/config/nvim ~/.config
 cp -rf ~/config/.wezterm.lua ~/
 
+zoxide init fish | source
 
 # template
 alias ll='ls -al'
