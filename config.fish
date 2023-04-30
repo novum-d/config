@@ -6,7 +6,7 @@ end
 if test (uname -s) = Darwin
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     fish_add_path $HOME/Library/Android/sdk/platform-tools
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval (/opt/homebrew/bin/brew shellenv)
 else
 end
 
