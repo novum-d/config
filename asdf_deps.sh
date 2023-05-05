@@ -57,8 +57,8 @@ asdf global nodejs latest
 
 ## java
 asdf plugin-add java https://github.com/halcyon/asdf-java.git
-asdf install java openjdk-20
-asdf global java openjdk-20
+asdf install java openjdk-17
+asdf global java openjdk-17
 
 ## erlang
 ERLANG_VERSION=25.2
