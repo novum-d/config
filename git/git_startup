@@ -3,8 +3,10 @@
 # git
 git config --global core.editor nvim
 
-git config --global user.name novum-d
-git config --global user.email hamada.tomoki01@gmail.com
+# git config --global user.name novum-d
+# git config --global user.email hamada.tomoki01@gmail.com
+git config --global user.name TomokiHamada
+git config --global user.email t.hamada@fenrir.co.jp
 
 ## alias
 git config --global alias.co checkout
@@ -13,14 +15,14 @@ git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.sw switch
 git config --global alias.st status
-git config --global alias.rs reset
 git config --global alias.rsh '!git reset --hard'
-git config --global alias.ad add
+git config --global alias.a add
+git config --global alias.rs reset
 git config --global alias.ph push
 git config --global alias.pl pull
-git config --global alias.lo '!git log'
-git config --global alias.lol '!git log --oneline'
-git config --global alias.lod '!git log --graph --oneline --decorate=full'
+git config --global alias.l 'log'
+git config --global alias.lo '!git log --oneline'
+git config --global alias.ld '!git log --graph --oneline --decorate=full'
 
 
 git config --global init.defaultBranch main
@@ -28,11 +30,13 @@ git config --global commit.template ~/config/git/template/commit_message
 
 ## gh
 gh config set editor nvim
-gh alias set br 'browse'
+gh alias set b 'browse'
 gh alias set --shell bri 'gh issue view --web $1'
-gh alias set is 'issue'
-gh alias set cr 'create'
+gh alias set i 'issue'
 gh alias set --shell isc 'gh issue create --title "$1" --assignee "@me" -F ~/config/git/template/issue_basic.md && gh issue list --state=open --limit=1'
 
-gh alias set rp 'repo'
+### sub
+gh alias set iv 'issue view'
+gh alias set pre 'pr edit'
+gh alias set prc 'pr create'
 

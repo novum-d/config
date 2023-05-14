@@ -22,6 +22,7 @@ return {
         "regex",
         "tsx",
         "typescript",
+        "kotlin",
         "vim",
         "yaml",
       },

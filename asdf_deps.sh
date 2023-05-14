@@ -31,10 +31,6 @@ asdf install ripgrep latest
 asdf global ripgrep latest
 rg
 
-## peco
-asdf plugin add peco https://github.com/asdf-community/asdf-peco.git
-asdf install peco latest
-asdf global peco latest
 
 ## ghq
 asdf plugin-add ghq https://github.com/kajisha/asdf-ghq
@@ -42,6 +38,7 @@ asdf install ghq latest
 asdf global ghq latest
 
 ## github-cli
+GITHUB_CLI_VERSION=2.27.0
 asdf plugin-add github-cli https://github.com/bartlomiejdanek/asdf-github-cli.git
 asdf install github-cli latest
 asdf global github-cli latest
