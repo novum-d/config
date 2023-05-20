@@ -12,6 +12,7 @@ end
 
 source ~/.asdf/asdf.fish
 
+fish_add_path $HOME/repos/todo/target/debug
 fish_add_path $HOME/config/bin
 fish_add_path $HOME/.cargo/bin
 set -g theme_nerd_fonts yes
