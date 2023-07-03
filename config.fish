@@ -27,10 +27,12 @@ cp -rf ~/config/.wezterm.lua ~/
 zoxide init fish | source
 
 # template
+alias l='lazygit'
 alias ll='ls -al'
 alias dcp='docker compose'
 alias g='git'
 alias n='nvim'
+alias m="touch ~/repos/md/buf/$1 && nvim ~/repos/md/buf/$1"
 # ~/config/git/git_startup
 
 # create file
