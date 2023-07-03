@@ -7,6 +7,6 @@ end
 
 config.color_scheme = "s3r0 modified (terminal.sexy)"
 config.warn_about_missing_glyphs = false
-font_size = 12.0
+config.font_size = 16.0
 
 return config
