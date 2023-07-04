@@ -23,7 +23,6 @@ return {
             "less",
             "javascript",
             "typescript",
-            "markdown",
           },
           init_options = {
             html = {

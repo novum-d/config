@@ -32,7 +32,7 @@ alias ll='ls -al'
 alias dcp='docker compose'
 alias g='git'
 alias n='nvim'
-alias m="touch ~/repos/md/buf/$1 && nvim ~/repos/md/buf/$1"
+alias m="nvim ~/repos/md/buf"
 # ~/config/git/git_startup
 
 # create file
