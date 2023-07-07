@@ -58,13 +58,13 @@ asdf install java openjdk-17
 asdf global java openjdk-17
 
 ## erlang
-ERLANG_VERSION=25.2
+ERLANG_VERSION=latest
 asdf plugin add erlang
 asdf install erlang $ERLANG_VERSION
 asdf global erlang $ERLANG_VERSION
 
 ## elixir
-ELIXIR_VERSION=1.14.2-otp-25
+ELIXIR_VERSION=latest
 asdf plugin add elixir
 asdf install elixir $ELIXIR_VERSION
 asdf global elixir $ELIXIR_VERSION

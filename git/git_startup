@@ -1,12 +1,10 @@
-#!/bin/zsh
-
 # git
 git config --global core.editor nvim
 
-# git config --global user.name novum-d
-# git config --global user.email hamada.tomoki01@gmail.com
-git config --global user.name TomokiHamada
-git config --global user.email t.hamada@fenrir.co.jp
+git config --global user.name novum-d
+git config --global user.email hamada.tomoki01@gmail.com
+# git config --global user.name TomokiHamada
+# git config --global user.email t.hamada@fenrir.co.jp
 
 ## alias
 git config --global alias.co checkout
