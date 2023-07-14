@@ -27,7 +27,7 @@ cp -rf ~/config/.wezterm.lua ~/
 zoxide init fish | source
 
 # template
-alias l='lazygit'
+alias lg='lazygit'
 alias ll='ls -al'
 alias dcp='docker compose'
 alias g='git'
