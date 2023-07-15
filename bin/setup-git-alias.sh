@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 # alias
 git config --global alias.co checkout
 git config --global alias.br branch

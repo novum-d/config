@@ -4,6 +4,7 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "rust",
         "help",
         "eex",
         "elixir",
