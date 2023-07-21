@@ -19,6 +19,7 @@ set -g theme_nerd_fonts yes
 
 
 set RUST_BACKTRACE 1
+set ZELLIJ_CONFIG_FILE $HOME/config/zellij/config.kdl
 
 
 cp -rf ~/config/nvim ~/.config
@@ -28,6 +29,7 @@ zoxide init fish | source
 
 # template
 alias lg='lazygit'
+alias zl="zellij --config $ZELLIJ_CONFIG_FILE"
 alias ll='ls -al'
 alias dcp='docker compose'
 alias g='git'

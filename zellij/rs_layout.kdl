@@ -1,0 +1,21 @@
+layout {
+    pane split_direction="vertical" size="80%" {
+        pane {
+            edit "src/main.rs"
+            size "70%"
+            focus true
+        }        
+        pane {
+          edit "Cargo.toml"
+          size "30%"
+        }
+    }
+    pane split_direction="vertical" size="20%" {
+        pane command="bash" {
+            args "-c" "wasm-pack build --target web --out-name wasm --out-dir ./static && miniserve ./static --index index.html"
+        }
+        pane command="cargo" {
+            args "test"
+        }
+    }
+}
