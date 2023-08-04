@@ -40,6 +40,7 @@ alias m="nvim ~/repos/md/buf"
 # create file
 alias txt='touch ~/Desktop/memo.txt'
 alias md='touch ~/Desktop/README.md'
+alias ct="cat $1 | pbcopy"
 
 function ghq_fzf_repo -d 'Repository search'
     ghq list --full-path | fzf --reverse --height=100% | read select

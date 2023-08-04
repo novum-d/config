@@ -166,7 +166,7 @@ keybinds {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl h" { SwitchToMode "Move"; }
+        // bind "Ctrl h" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Ctrl b" { SwitchToMode "Tmux"; }
@@ -315,6 +315,6 @@ plugins {
 // theme_dir "/path/to/my/theme_dir"
 //
 
-layout_dir "/home/novum-d/config/zellij"
-default_layout "/home/novum-d/config/zellij/rs_layout.kdl"
-scrollback_editor "/usr/bin/nvim"
+layout_dir "$HOME/config/zellij"
+default_layout "/Users/t.hamada/config/zellij/rs_layout.kdl"
+scrollback_editor "/opt/homebrew/bin/nvim"
