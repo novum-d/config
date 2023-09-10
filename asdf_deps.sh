@@ -31,17 +31,15 @@ asdf install ripgrep latest
 asdf global ripgrep latest
 rg
 
-
 ## ghq
 asdf plugin-add ghq https://github.com/kajisha/asdf-ghq
 asdf install ghq latest
 asdf global ghq latest
 
 ## github-cli
-GITHUB_CLI_VERSION=2.27.0
 asdf plugin-add github-cli https://github.com/bartlomiejdanek/asdf-github-cli.git
-asdf install github-cli latest
-asdf global github-cli latest
+asdf install github-cli 2.27.0
+asdf global github-cli 2.27.0
 
 # package tools
 
@@ -58,18 +56,16 @@ asdf install java openjdk-17
 asdf global java openjdk-17
 
 ## erlang
-ERLANG_VERSION=latest
+# sudo apt -y install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
 asdf plugin add erlang
-asdf install erlang $ERLANG_VERSION
-asdf global erlang $ERLANG_VERSION
+asdf install erlang latest
+asdf global erlang latest
 
 ## elixir
-ELIXIR_VERSION=latest
 asdf plugin add elixir
-asdf install elixir $ELIXIR_VERSION
-asdf global elixir $ELIXIR_VERSION
+asdf install elixir latest
+asdf global elixir latest
 
 # phoenix
-PHOENIX_VERSION=1.7.0-rc.2
 mix local.hex --force
-mix archive.install hex phx_new 1.7.0-rc.2 --force
+mix archive.install hex phx_new --force
