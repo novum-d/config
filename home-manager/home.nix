@@ -1,100 +1,112 @@
 { config, pkgs, ... }:
 
 {
-  fonts.fontconfig.enable = true;
+  imports =
+    [ # Include the results of the hardware scan.
+      ./programs/wezterm
+    ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # TODO please change the username & home direcotry to your own
   home.username = "novumd";
   home.homeDirectory = "/home/novumd";
 
-  # This value determines the Home Manager release that your configuration is # compatible with. This helps avoid breakage when a new Home Manager release # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  # link the configuration file in current directory to the specified location in home directory
+  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
+  # link all files in `./scripts` to `~/.config/i3/scripts`
+  # home.file.".config/i3/scripts" = {
+  #   source = ./scripts;
+  #   recursive = true;   # link recursively
+  #   executable = true;  # make all files executable
+  # };
+
+  # encode the file content in nix configuration file directly
+  # home.file.".xxx".text = ''
+  #     xxx
+  # '';
+
+  # set cursor size and dpi for 4k monitor
+  xresources.properties = {
+    "Xcursor.size" = 16;
+    "Xft.dpi" = 172;
+  };
+
+  # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # pkgs.nixgl.auto.nixGLDefault
-    
-    # Fonts
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    nerdfonts
-    jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    
-    # Shell
-    fd
+    # here is some command line tools I use frequently
+    # feel free to add your own or remove some of them
+
+    # archives
+    zip
+    unzip
+    xz
+
+    # utils
+    ripgrep # recursively searches directories for a regex pattern
+    fzf # A command-line fuzzy finder
     zoxide
+    zellij
     lazygit
-    timeshift
-
-    # Programming Languages
-    rustup
-
-    # GUI Applications
+    xdg-user-dirs # LANG=C xdg-user-dirs --force
+    gh
+    ghq
+    
+    # gui apps
     albert
     discord
     jetbrains-toolbox
-    figma-linux
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    figma-linux 
+    gnome.gnome-tweaks
+    # input-remapper
+    
+    # system tools
+    pciutils # lspci
+    usbutils # lsusb
+    libinput
+    gcc
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+  # This value determines the home Manager release that your
+  # configuration is compatible with. This helps avoid breakage
+  # when a new home Manager release introduces backwards
+  # incompatible changes.
+  #
+  # You can update home Manager without changing this value. See
+  # the home Manager release notes for a list of state version
+  # changes in each release.
+  home.stateVersion = "23.11";
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  # You can also manage environment variables but you will have to manually
-  # source
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/novumd/etc/profile.d/hm-session-vars.sh
-  #
-  # if you don't want to manage your shell through Home Manager.
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
-
-  # Let Home Manager install and manage itself.
+  # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.fzf.enable = true;
-  programs.git.enable = true;
-  programs.gh.enable = true;
   programs.neovim.enable = true;
-  programs.zoxide.enable = true;
-  programs.ripgrep.enable = true;
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      . $HOME/config/fish/config.fish;
-    '';
+  # programs.fish = {
+  #   enable = true;
+  #   interactiveShellInit = ''
+  #     . $HOME/repos/config/fish/config.fish;
+  #   '';
+  # };
+  programs.git = {
+      enable = true;
+      lfs.enable = true;
+      userName = "novumd";
+      userEmail = "hamada.tomoki@email.com";
+      aliases = {
+          c = "commit";
+          co = "checkout";
+          p = "pull";
+          P = "push";
+          s = "status";
+          sw = "switch";
+          ss = "stash";
+      };
+      extraConfig = {
+         push = { autoSetupRemote = true; };
+         ghq.root = "$HOME/repos";
+      };
   };
-  imports = [
-    ./wezterm.nix
-    ./browser.nix
-  ];
+
+  programs = {
+    google-chrome.enable = true;
+    brave.enable = true;
+  };
 }

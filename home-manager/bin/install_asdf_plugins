@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+asdf add ghq
+asdf add peco
+
+asdf install ghq latest
+asdf install peco latest
+
+asdf global ghq latest
+asdf global peco latest

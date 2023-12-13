@@ -1,0 +1,16 @@
+read -p 'Github email: ' email
+
+# create ssh-key
+ssh-keygen -t ed25519 -N "" -f ~/.ssh/github -C $email
+
+if [[ $(which xsel) =~ ^/.*$ ]]; then
+  alias pbcopy='xsel --clipboard --input'
+fi
+
+cat ~/.ssh/github.pub | pbcopy
+
+echo "Host github.com\n  IdentityFile ~/.ssh/github\n  User git\n" >> ~/.ssh/config
+
+echo "Copied public key to clipboard!!"
+echo "After registering public key on github, please test with the following command ↓"
+echo "ssh -T github.com"
