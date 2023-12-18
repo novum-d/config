@@ -6,11 +6,17 @@ end
 if test (uname -s) = Darwin
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     fish_add_path $HOME/Library/Android/sdk/platform-tools
+    export ANDROID_HOME=$HOME/Library/Android/sdk
+    export NDK_HOME=$ANDROID_HOME/ndk/25.2.9519653
+    export TAURI_APPLE_DEVELOPMENT_TEAM=9PP2XBUQM9
+    fish_add_path $ANDROID_HOME
+    fish_add_path $NDK_HOME
     eval (/opt/homebrew/bin/brew shellenv)
 else
 end
 
 source ~/.asdf/asdf.fish
+. ~/.asdf/plugins/java/set-java-home.fish
 
 fish_add_path $HOME/repos/todo/target/debug
 fish_add_path $HOME/config/bin
