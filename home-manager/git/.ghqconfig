@@ -1,0 +1,6 @@
+[ghq]
+  root = $HOME
+  root = $HOME/IdeaProjects
+  root = $HOME/AndroidStudioProjects
+  root = $HOME/Documents
+  root = $HOME/repos

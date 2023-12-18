@@ -1,0 +1,25 @@
+[core]
+        editor = vim
+	excludesfile = ~/hamadatomoki/.gitignore_global
+[color]
+	ui = true
+[alias]
+	see = browse
+	pr = pull-request
+	co = checkout
+	pl = pull
+	ph = push
+	st = status
+	sw = switch
+	br = branch
+	ci = commit
+	l = log
+	lo = log --oneline
+	log = log --graph --oneline --decorate=full
+[user]
+	name = HamadaTomoki
+	email = hamada.tomoki01@gmail.com
+[init]
+	defaultBranch = main
+[commit]
+	template = ~/config/git/.gitemoji
