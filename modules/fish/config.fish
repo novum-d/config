@@ -8,12 +8,12 @@ if test (uname -s) = Darwin
     fish_add_path $HOME/Library/Android/sdk/platform-tools
     eval (/opt/homebrew/bin/brew shellenv)
 else
+    fish_add_path $HOME/Android/Sdk/platform-tools
 end
 
-fish_add_path $HOME/config/bin
 fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/repos/config/bin
 set -g theme_nerd_fonts yes
-
 
 set RUST_BACKTRACE 1
 # set ZELLIJ_CONFIG_FILE $HOME/repos/config/modules/zellij/config.kdl

@@ -48,8 +48,11 @@
     zellij
     lazygit
     xdg-user-dirs # LANG=C xdg-user-dirs --force
+    xclip
     gh
     ghq
+    xdotool
+    tre-command
     
     # gui apps
     albert
@@ -57,13 +60,13 @@
     jetbrains-toolbox
     figma-linux 
     gnome.gnome-tweaks
-    # input-remapper
     
     # system tools
     pciutils # lspci
     usbutils # lsusb
     libinput
     gcc
+    python3
   ];
 
   # This value determines the home Manager release that your
@@ -85,6 +88,7 @@
   #     . $HOME/repos/config/fish/config.fish;
   #   '';
   # };
+  # programs.java.enable = true;
   programs.git = {
       enable = true;
       lfs.enable = true;
@@ -101,7 +105,7 @@
       };
       extraConfig = {
          push = { autoSetupRemote = true; };
-         ghq.root = "$HOME/repos";
+         ghq.root = "~/repos";
       };
   };
 
