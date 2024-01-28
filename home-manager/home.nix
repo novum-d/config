@@ -64,7 +64,8 @@
     # system tools
     pciutils # lspci
     usbutils # lsusb
-    libinput
+    libinput # xwayland
+    evtest # confirm keybord input event
     gcc
     python3
   ];
