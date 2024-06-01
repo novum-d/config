@@ -28,6 +28,7 @@
 
     extraConfig = {
       push = { autoSetupRemote = true; };
+      ghq = { root = "~/repos"; };
     };
   };
 

@@ -98,7 +98,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      . $HOME/repos/config/fish/config.fish;
+      . $HOME/repos/config/home-manager/programs/fish/config.fish;
     '';
   };
   programs.java.enable = true;
