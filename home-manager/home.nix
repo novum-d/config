@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./programs/wezterm
+      ./programs/git
     ];
 
   # TODO please change the username & home direcotry to your own
@@ -35,6 +36,13 @@
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
+    
+    # proggramming langage
+    erlang
+    elixir
+    nodePackages.pnpm
+    nodejs
+    rustup
 
     # archives
     zip
@@ -49,17 +57,21 @@
     lazygit
     xdg-user-dirs # LANG=C xdg-user-dirs --force
     xclip
+    fd
     gh
     ghq
     xdotool
     tre-command
+    tree-sitter
+    vscode
     
     # gui apps
     albert
-    discord
     jetbrains-toolbox
     figma-linux 
     gnome.gnome-tweaks
+    typora
+    vesktop
     
     # system tools
     pciutils # lspci
@@ -83,32 +95,13 @@
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.neovim.enable = true;
-  # programs.fish = {
-  #   enable = true;
-  #   interactiveShellInit = ''
-  #     . $HOME/repos/config/fish/config.fish;
-  #   '';
-  # };
-  # programs.java.enable = true;
-  programs.git = {
-      enable = true;
-      lfs.enable = true;
-      userName = "novumd";
-      userEmail = "hamada.tomoki@email.com";
-      aliases = {
-          c = "commit";
-          co = "checkout";
-          p = "pull";
-          P = "push";
-          s = "status";
-          sw = "switch";
-          ss = "stash";
-      };
-      extraConfig = {
-         push = { autoSetupRemote = true; };
-         ghq.root = "~/repos";
-      };
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      . $HOME/repos/config/fish/config.fish;
+    '';
   };
+  programs.java.enable = true;
 
   programs = {
     google-chrome.enable = true;
