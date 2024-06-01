@@ -10,8 +10,6 @@ if test (uname -s) = Darwin
 else
 end
 
-fish_add_path $HOME/repos/todo/target/debug
-fish_add_path $HOME/config/bin
 fish_add_path $HOME/.cargo/bin
 set -g theme_nerd_fonts yes
 
@@ -20,8 +18,8 @@ set RUST_BACKTRACE 1
 set ZELLIJ_CONFIG_FILE $HOME/config/zellij/config.kdl
 
 
-cp -rf ~/config/nvim ~/.config
-cp -rf ~/config/.wezterm.lua ~/
+cp -rf ~/repos/config/nvim ~/.config
+cp -rf ~/repos/config/.wezterm.lua ~/
 
 zoxide init fish | source
 
