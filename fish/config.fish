@@ -36,7 +36,7 @@ zoxide init fish | source
 # template
 alias lg='lazygit'
 alias zl="zellij --config $ZELLIJ_CONFIG_FILE"
-alias ll='ls -al'
+alias l='ls -al'
 alias dcp='docker compose'
 alias g='git'
 alias n='nvim'
