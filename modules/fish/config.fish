@@ -16,6 +16,8 @@ fish_add_path $HOME/repos/config/bin
 set -g theme_nerd_fonts yes
 
 set RUST_BACKTRACE 1
+set ANDROID_HOME $HOME/Android/Sdk
+set ANDROID_AVD_HOME $HOME/.android/avd
 # set ZELLIJ_CONFIG_FILE $HOME/repos/config/modules/zellij/config.kdl
 
 

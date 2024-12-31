@@ -16,6 +16,7 @@ set -g theme_nerd_fonts yes
 
 set RUST_BACKTRACE 1
 set ZELLIJ_CONFIG_FILE $HOME/config/zellij/config.kdl
+set LD_LIBRARY_PATH $NIX_LD_LIBRARY_PATH
 
 
 cp -rf ~/repos/config/nvim ~/.config
