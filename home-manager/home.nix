@@ -65,18 +65,19 @@
     tree-sitter
     vscode
     android-studio
+    neovim
+    #neovim-nightly
     # androidStudioPackages.canary
     
     # gui apps
     # albert
     anki
-    # jetbrains-toolbox
+    jetbrains.rust-rover
     gnome.gnome-tweaks
     typora
     discord
     slack
     zoom-us
-
     
     # system tools
     pciutils # lspci
@@ -99,7 +100,7 @@
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.neovim.enable = true;
+  # programs.neovim.enable = true;
   programs.fish = {
     enable = true;
     interactiveShellInit = ''

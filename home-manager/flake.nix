@@ -6,17 +6,22 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixgl.url = "github:guibou/nixGL";
     nixgl.inputs.nixpkgs.follows = "nixpkgs";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }:
+  outputs = { nixpkgs, home-manager, nixgl, neovim-nightly-overlay, ... }:
     let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
-        overlays = [ nixgl.overlay ];
+        overlays = [ 
+          nixgl.overlay
+          neovim-nightly-overlay.overlay
+        ];
         config.allowUnfree = true;
       };
     in {
@@ -25,7 +30,7 @@
 
         modules = [
           ./home.nix
-        ]
+        ];
       };
     };
 }
