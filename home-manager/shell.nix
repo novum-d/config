@@ -20,5 +20,4 @@ in pkgs.mkShell rec {
     export HOME_MANAGER_CONFIG="./home.nix"
     export NIXPKGS_ALLOW_UNFREE=1
   '';
-
 }
