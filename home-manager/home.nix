@@ -71,7 +71,8 @@
     tree-sitter
     vscode
     android-studio
-    neovim-nightly
+    neovim
+    #neovim-nightly
     # androidStudioPackages.canary
     
     # gui apps
