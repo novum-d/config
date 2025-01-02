@@ -32,6 +32,12 @@
     "Xft.dpi" = 172;
   };
 
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
@@ -65,8 +71,7 @@
     tree-sitter
     vscode
     android-studio
-    neovim
-    #neovim-nightly
+    neovim-nightly
     # androidStudioPackages.canary
     
     # gui apps
@@ -96,7 +101,8 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "24.05";
+  home.stateVersion = "23.11";
+
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
