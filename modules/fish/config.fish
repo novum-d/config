@@ -48,7 +48,15 @@ function ghq_fzf_repo -d 'Repository search'
     commandline -f repaint
 end
 
+function reset_neovim -d 'Reset neovim'
+    rm -rf ~/.config/nvim
+    rm -rf ~/.local/share/nvim
+    rm -rf ~/.local/state/nvim
+    rm -rf ~/.cache/nvim
+end
+
 # fish key bindings
 function fish_user_key_bindings
     bind \cg ghq_fzf_repo
 end
+
