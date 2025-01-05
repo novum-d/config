@@ -21,7 +21,7 @@ set ANDROID_AVD_HOME $HOME/.android/avd
 # set ZELLIJ_CONFIG_FILE $HOME/repos/config/modules/zellij/config.kdl
 
 
-cp -rf ~/repos/config/nvim ~/.config
+cp -rf ~/repos/config/nvim ~/.config/
 cp -rf ~/repos/config/.wezterm.lua ~/
 
 zoxide init fish | source
@@ -59,4 +59,3 @@ end
 function fish_user_key_bindings
     bind \cg ghq_fzf_repo
 end
-
