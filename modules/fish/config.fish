@@ -7,6 +7,7 @@ if test (uname -s) = Darwin
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     fish_add_path $HOME/Library/Android/sdk/platform-tools
     eval (/opt/homebrew/bin/brew shellenv)
+    set MACOSX_DEPLOYMENT_TARGET 13.4
 else
     fish_add_path $HOME/Android/Sdk/platform-tools
 end
