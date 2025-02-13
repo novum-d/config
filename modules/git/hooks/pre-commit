@@ -1,0 +1,21 @@
+#!/bin/bash
+#set -euxo pipefail
+
+echo "Running detekt check..."
+cachedFiles="$(git --no-pager diff --name-only --line-prefix=$(git rev-parse --show-toplevel)/ --cached)"
+echo -e "Cached Files: $cachedFiles"
+
+detektInput=$(echo "$cachedFiles " | awk '{printf "%s%s", (NR==1 ? "" : ","), $0}')
+
+OUTPUT=$(detekt --auto-correct --input "$detektInput" --config ~/repos/config/modules/detekt/detekt-config.yaml --plugins ~/repos/config/modules/detekt/detekt-formatting-1.23.7.jar 2>&1)
+EXIT_CODE=$?
+if [ $EXIT_CODE -ne 0 ]; then
+  echo $OUTPUT | sed 's/at / \n at /g'
+  echo -e "\n"
+  echo "***********************************************"
+  echo "                 detekt failed                 "
+  echo " Please fix the above issues before committing "
+  echo "***********************************************"
+  echo $EXIT_CODE
+  exit $EXIT_CODE
+fi
