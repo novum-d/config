@@ -3,7 +3,7 @@
 
 echo "Running detekt check..."
 
-cachedFiles="$(git --no-pager diff --name-only --line-prefix=$(git rev-parse --show-toplevel)/ --cached)"
+cachedFiles="$(git --no-pager diff --diff-filter=d --name-only --line-prefix=$(git rev-parse --show-toplevel)/ --cached)"
 echo -e "\n"
 echo "Cached Files:"
 echo "$cachedFiles"
@@ -14,15 +14,14 @@ detektInput=$(echo "$cachedFiles " | awk '{printf "%s%s", (NR==1 ? "" : ","), $0
 if [ "$detektInput" = ' ' ]; then
   exit 0
 fi
-
-OUTPUT=$(detekt --auto-correct --input "$detektInput" --config ~/repos/config/modules/detekt/detekt-config.yaml --plugins ~/repos/config/modules/detekt/detekt-formatting-1.23.7.jar 2>&1)
+REPORT_FILE="reports/log.html"
+OUTPUT=$(detekt --auto-correct --input "$detektInput" --build-upon-default-config --config ~/repos/config/modules/detekt/detekt-config.yaml --report html:$REPORT_FILE --plugins ~/repos/config/modules/detekt/detekt-formatting-1.23.7.jar 2>&1)
 EXIT_CODE=$?
 if [ $EXIT_CODE -ne 0 ]; then
-  echo $OUTPUT | sed 's/at / \n at /g'
-  echo -e "\n"
   echo "***********************************************"
   echo "                 detekt failed                 "
   echo " Please fix the above issues before committing "
   echo "***********************************************"
+  open $REPORT_FILE
   exit $EXIT_CODE
 fi

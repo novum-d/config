@@ -1,0 +1,187 @@
+build:
+  maxIssues: 0
+  excludeCorrectable: false
+  weights:
+    # complexity: 2
+    # LongParameterList: 1
+    # style: 1
+    # comments: 1
+
+config:
+  validation: true
+  warningsAsErrors: false
+  checkExhaustiveness: false
+  # when writing own rules with new properties, exclude the property path e.g.: 'my_rule_set,.*>.*>[my_property]'
+  excludes: ''
+
+processors:
+  active: true
+
+console-reports:
+  active: true
+
+output-reports:
+  active: true
+
+
+comments:
+  active: true
+
+complexity:
+  active: true
+  CognitiveComplexMethod: 
+    active: true
+    threshold: 15
+
+coroutines:
+  active: true
+
+empty-blocks:
+  active: true
+
+exceptions:
+  active: true
+  ObjectExtendsThrowable: 
+    active: true
+
+naming:
+  active: true
+
+performance:
+  active: true
+
+potential-bugs:
+  active: true
+  CastNullableToNonNullableType: 
+    active: true
+  CastToNullableType: 
+    active: true
+  Deprecation: 
+    active: true
+  DontDowncastCollectionTypes: 
+    active: true
+  ElseCaseInsteadOfExhaustiveWhen: 
+    active: true
+    ignoredSubjectTypes: []
+  ExitOutsideMain: 
+    active: true
+  ImplicitUnitReturnType: 
+    active: true
+  LateinitUsage: 
+    active: true
+  NullCheckOnMutableProperty: 
+    active: true
+  NullableToStringCall: 
+    active: true
+  PropertyUsedBeforeDeclaration: 
+    active: true
+  UnconditionalJumpStatementInLoop: 
+    active: true
+  UnnecessaryNotNullCheck: 
+    active: true
+
+style:
+  active: true
+  BracesOnIfStatements: 
+    active: true
+    singleLine: 'never'
+    multiLine: 'always'
+  BracesOnWhenStatements: 
+    active: true
+    singleLine: 'necessary'
+    multiLine: 'consistent'
+  CanBeNonNullable:
+    active: false
+  CascadingCallWrapping: 
+    active: true
+    includeElvis: true
+  ClassOrdering: 
+    active: true
+  CollapsibleIfStatements: 
+    active: true
+  DataClassContainsFunctions: 
+    active: true
+    conversionFunctionPrefix:
+      - 'to'
+    allowOperators: false
+  DoubleNegativeLambda: 
+    active: true
+    negativeFunctions:
+      - reason: 'Use `takeIf` instead.'
+        value: 'takeUnless'
+      - reason: 'Use `all` instead.'
+        value: 'none'
+    negativeFunctionNameParts:
+      - 'not'
+      - 'non'
+  EqualsOnSignatureLine: 
+    active: true
+  ExplicitCollectionElementAccessMethod: 
+    active: true
+  ExplicitItLambdaParameter: 
+    active: true
+  ExpressionBodySyntax: 
+    active: true
+    includeLineWrapping: false
+  ForbiddenAnnotation: 
+    active: true
+  ForbiddenImport: 
+    active: true
+  ForbiddenMethodCall: 
+    active: true
+  ForbiddenSuppress: 
+    active: true
+    rules: []
+  MandatoryBracesLoops: 
+    active: true
+  MultilineLambdaItParameter: 
+    active: true
+  NoTabs: 
+    active: true
+  NullableBooleanCheck: 
+    active: true
+  OptionalUnit: 
+    active: true
+  PreferToOverPairSyntax: 
+    active: true
+  SpacingBetweenPackageAndImports: 
+    active: true
+  StringShouldBeRawString: 
+    active: true
+    maxEscapedCharacterCount: 2
+    ignoredCharacters: []
+  TrailingWhitespace: 
+    active: true
+
+formatting:
+  active: true
+  android: true
+  autoCorrect: true
+  ClassName:
+    active: true
+  ContextReceiverMapping:
+    active: true
+  DiscouragedCommentLocation:
+    active: true
+  EnumWrapping:
+    active: true
+  FunctionName:
+    active: true
+  FunctionSignature:
+    active: true
+  IfElseBracing:
+    active: true
+  NoBlankLineInList:
+    active: true
+  NoConsecutiveComments:
+    active: true
+  NoSingleLineBlockComment:
+    active: true
+  TryCatchFinallySpacing:
+    active: true
+  TypeArgumentListSpacing:
+    active: true
+  TypeParameterListSpacing:
+    active: true
+  TrailingCommaOnDeclarationSite:
+    active: true
