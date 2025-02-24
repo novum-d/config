@@ -14,14 +14,18 @@ detektInput=$(echo "$cachedFiles " | awk '{printf "%s%s", (NR==1 ? "" : ","), $0
 if [ "$detektInput" = ' ' ]; then
   exit 0
 fi
-REPORT_FILE="reports/log.html"
-OUTPUT=$(detekt --auto-correct --input "$detektInput" --build-upon-default-config --config ~/repos/config/modules/detekt/detekt-config.yaml --report html:$REPORT_FILE --plugins ~/repos/config/modules/detekt/detekt-formatting-1.23.7.jar 2>&1)
+
+MODULES="$HOME/repos/config/modules"
+DETEKT="$MODULES/detekt"
+OUTPUT=$(detekt --auto-correct --input "$detektInput" --build-upon-default-config --config $DETEKT/detekt-config.yaml --report html:$DETEKT/reports/log.html --baseline $DETEKT/baseline.xml --plugins $DETEKT/detekt-formatting-1.23.7.jar 2>&1)
+#OUTPUT=$(detekt --auto-correct --input "$detektInput" --build-upon-default-config --config $DETEKT/detekt-config.yaml --report html:$DETEKT/reports/log.html --baseline $DETEKT/baseline.xml --create-baseline --plugins $DETEKT/detekt-formatting-1.23.7.jar 2>&1)
 EXIT_CODE=$?
 if [ $EXIT_CODE -ne 0 ]; then
   echo "***********************************************"
   echo "                 detekt failed                 "
   echo " Please fix the above issues before committing "
   echo "***********************************************"
+  echo $OUTPUT
   open $REPORT_FILE
   exit $EXIT_CODE
 fi

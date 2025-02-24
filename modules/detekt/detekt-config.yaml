@@ -32,6 +32,19 @@ complexity:
   CognitiveComplexMethod: 
     active: true
     threshold: 15
+  NamedArguments: 
+    active: true
+    threshold: 1
+  # for compose
+  LongParameterList:
+    active: true
+    functionThreshold: 99
+    ignoreDefaultParameters: true
+  TooManyFunctions:
+    active: true
+    ignoreAnnotatedFunctions: ['Preview']
+  LongMethod:
+    active: false
 
 coroutines:
   active: true
@@ -46,6 +59,15 @@ exceptions:
 
 naming:
   active: true
+  # for compose
+  FunctionNaming:
+    active: true
+    functionPattern: '[a-zA-Z][a-zA-Z0-9]*'
+    ignoreAnnotated: ['Composable']
+  TopLevelPropertyNaming:
+    active: true
+    constantPattern: '[A-Z][A-Za-z0-9]*'
+
 
 performance:
   active: true
@@ -99,11 +121,6 @@ style:
     active: true
   CollapsibleIfStatements: 
     active: true
-  DataClassContainsFunctions: 
-    active: true
-    conversionFunctionPrefix:
-      - 'to'
-    allowOperators: false
   DoubleNegativeLambda: 
     active: true
     negativeFunctions:
@@ -132,6 +149,8 @@ style:
   ForbiddenSuppress: 
     active: true
     rules: []
+  ForbiddenComment:
+    allowedPatterns: 'TODO*'
   MandatoryBracesLoops: 
     active: true
   MultilineLambdaItParameter: 
@@ -152,6 +171,15 @@ style:
     ignoredCharacters: []
   TrailingWhitespace: 
     active: true
+  # for compose
+  MagicNumber:
+    active: true
+    ignorePropertyDeclaration: true 
+    ignoreCompanionObjectPropertyDeclaration: true
+  UnusedPrivateMember:
+    active: false
+    ignoreAnnotated: ['Preview']
+
 
 formatting:
   active: true
@@ -165,10 +193,9 @@ formatting:
     active: true
   EnumWrapping:
     active: true
-  FunctionName:
-    active: true
   FunctionSignature:
     active: true
+    forceMultilineWhenParameterCountGreaterOrEqualThan: 1
   IfElseBracing:
     active: true
   NoBlankLineInList:
