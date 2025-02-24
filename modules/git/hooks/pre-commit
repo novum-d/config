@@ -26,6 +26,6 @@ if [ $EXIT_CODE -ne 0 ]; then
   echo " Please fix the above issues before committing "
   echo "***********************************************"
   echo $OUTPUT
-  open $REPORT_FILE
+  open $DETEKT/reports/log.html
   exit $EXIT_CODE
 fi
