@@ -2,7 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-
 if test (uname -s) = Darwin
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     fish_add_path $HOME/Library/Android/sdk/platform-tools
@@ -21,9 +20,8 @@ set ANDROID_HOME $HOME/Android/Sdk
 set ANDROID_AVD_HOME $HOME/.android/avd
 # set ZELLIJ_CONFIG_FILE $HOME/repos/config/modules/zellij/config.kdl
 
-
 # cp -rf ~/repos/config/nvim ~/.config/
-# cp -rf ~/repos/config/.wezterm.lua ~/
+cp -rf ~/repos/config/.wezterm.lua ~/
 
 zoxide init fish | source
 
