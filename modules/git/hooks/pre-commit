@@ -29,8 +29,8 @@ OUTPUT=$(
     --report html:"$DETEKT/reports/log.html" \
     --plugins "$DETEKT/detekt-formatting-1.23.7.jar,$DETEKT/detekt-twitter-compose-0.0.26-all.jar" \
     2>&1
-    # --baseline "$DETEKT"/baseline.xml \
-    # --create-baseline
+  # --baseline "$DETEKT"/baseline.xml \
+  # --create-baseline
 )
 EXIT_CODE=$?
 if [ $EXIT_CODE -ne 0 ]; then

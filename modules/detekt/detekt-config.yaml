@@ -40,8 +40,9 @@ complexity:
     active: true
     functionThreshold: 99
     ignoreDefaultParameters: true
+  # TODO: ViewModelあたりのUIのイベントが多くなるクラスも考慮して考える
   TooManyFunctions:
-    active: true
+    active: false
     ignoreAnnotatedFunctions: ['Preview']
   LongMethod:
     active: false
@@ -252,8 +253,11 @@ TwitterCompose:
     # previewPublicOnlyIfParams: false
   RememberMissing:
     active: true
+
+  # 案件によってはKotlinx Immutable Collectionsは使用されていないため一旦オフにする
   UnstableCollections:
-    active: true
+    active: false
+
   ViewModelForwarding:
     active: true
   ViewModelInjection:
