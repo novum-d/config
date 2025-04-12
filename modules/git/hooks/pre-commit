@@ -20,6 +20,10 @@ DETEKT_INPUT=$(echo "$cachedFiles" | awk '{printf "%s%s", (NR==1 ? "" : ","), $0
 MODULES="$HOME/repos/config/modules"
 DETEKT="$MODULES/detekt"
 
+if [ "$DETEKT_INPUT" = '' ]; then
+  exit 0
+fi
+
 OUTPUT=$(
   detekt \
     --auto-correct \
