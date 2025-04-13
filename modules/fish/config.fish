@@ -22,6 +22,7 @@ set ANDROID_AVD_HOME $HOME/.android/avd
 
 # cp -rf ~/repos/config/nvim ~/.config/
 cp -rf ~/repos/config/.wezterm.lua ~/
+cp -rf ~/repos/config/.ideavimrc ~/
 
 zoxide init fish | source
 
