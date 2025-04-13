@@ -64,7 +64,6 @@
     tre-command
     tree-sitter
     vscode
-    android-studio
     neovim
     #neovim-nightly
     # androidStudioPackages.canary
@@ -72,6 +71,7 @@
     # gui apps
     # albert
     anki
+    android-studio
     jetbrains.rust-rover
     gnome.gnome-tweaks
     typora

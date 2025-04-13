@@ -21,6 +21,7 @@ set LD_LIBRARY_PATH $NIX_LD_LIBRARY_PATH
 
 cp -rf ~/repos/config/nvim ~/.config
 cp -rf ~/repos/config/.wezterm.lua ~/
+cp -rf ~/repos/config/.ideavimrc ~/
 
 zoxide init fish | source
 
