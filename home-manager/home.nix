@@ -73,6 +73,8 @@
     anki
     android-studio
     jetbrains.rust-rover
+    jetbrains.webstorm
+
     gnome.gnome-tweaks
     typora
     discord
