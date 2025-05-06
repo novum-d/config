@@ -1,12 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
-    <ID>MagicNumber:ButtonDestinationSearch.kt$0xB3FFFFFF</ID>
-    <ID>MagicNumber:ButtonDestinationSearch.kt$0xFF0A9E22</ID>
-    <ID>MagicNumber:DestinationSearchGroupRidePage.kt$0x80000000</ID>
-    <ID>MagicNumber:DestinationSearchGroupRidePage.kt$0xFF00B01C</ID>
-    <ID>MagicNumber:DestinationSearchGroupRidePage.kt$0xFFD9D9D9</ID>
-    <ID>MagicNumber:DestinationSearchGroupRidePage.kt$10f</ID>
+    <ID>PreviewPublic:ItemUserList.kt$UserListItem_Preview</ID>
   </CurrentIssues>
 </SmellBaseline>

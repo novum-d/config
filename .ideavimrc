@@ -26,14 +26,14 @@ nmap <leader>cu <Action>(FindUsages)
 nmap <leader>cs <Action>(ActivateStructureToolWindow)
 nmap <leader>cc <Action>(CommentByLineComment)
 nmap <leader>cr <Action>(RenameElement)
-nmap <C-l> <Action>(NextSplitter)
+nmap <C-|> <Action>(NextSplitter)
 nmap <C-h> <Action>(PrevSplitter)
 
 " code jumps
 nmap gi <Action>(GotoImplementation)
 nmap ]e <Action>(GotoNextError)
 nmap [e <Action>(GotoPreviousError)
-nmap <S-l> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
 nmap <S-h> <Action>(PreviousTab)
 nmap <S-s> <Action>(Switcher)
 

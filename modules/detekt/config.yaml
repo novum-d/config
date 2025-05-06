@@ -172,47 +172,21 @@ style:
     ignoredCharacters: []
   TrailingWhitespace: 
     active: true
+  ReturnCount:
+    active: false # 早期return(複数)は可読性を損なうものではなく、むしろ処理を抜けたほうが読みやすくなるので許可
+  DestructuringDeclarationWithTooManyEntries:
+    active: true
+    maxDestructuringEntries: 5 # 分解宣言に限度はあると思うが、著しく可読性を損なうものでなければよい
   # for compose
   MagicNumber:
     active: true
     ignorePropertyDeclaration: true 
     ignoreCompanionObjectPropertyDeclaration: true
+    ignoreAnnotated: ['Preview']
   UnusedPrivateMember:
     active: false
     ignoreAnnotated: ['Preview']
 
-
-formatting:
-  active: true
-  android: true
-  autoCorrect: true
-  ClassName:
-    active: true
-  ContextReceiverMapping:
-    active: true
-  DiscouragedCommentLocation:
-    active: true
-  EnumWrapping:
-    active: true
-  FunctionSignature:
-    active: true
-    forceMultilineWhenParameterCountGreaterOrEqualThan: 1
-  IfElseBracing:
-    active: true
-  NoBlankLineInList:
-    active: true
-  NoConsecutiveComments:
-    active: true
-  NoSingleLineBlockComment:
-    active: true
-  TryCatchFinallySpacing:
-    active: true
-  TypeArgumentListSpacing:
-    active: true
-  TypeParameterListSpacing:
-    active: true
-  TrailingCommaOnDeclarationSite:
-    active: true
 
 TwitterCompose:
   CompositionLocalAllowlist:

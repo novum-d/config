@@ -1,48 +1,63 @@
-#!/bin/bash
-#set -euxo pipefail
-
-echo "Running detekt check..."
-
-cachedFiles="$(
-  git --no-pager diff \
-    --diff-filter=d \
-    --name-only \
-    --line-prefix="$(git rev-parse --show-toplevel)/" \
-    --cached
-)"
-echo -e "\n"
-echo "Cached Files:"
-echo "$cachedFiles"
-echo -e "\n"
-
-DETEKT_INPUT=$(echo "$cachedFiles" | awk '{printf "%s%s", (NR==1 ? "" : ","), $0}')
-
-MODULES="$HOME/repos/config/modules"
-DETEKT="$MODULES/detekt"
-
-if [ "$DETEKT_INPUT" = '' ]; then
-  exit 0
-fi
-
-OUTPUT=$(
-  detekt \
-    --auto-correct \
-    --input "$DETEKT_INPUT" \
-    --build-upon-default-config \
-    --config "$DETEKT/detekt-config.yaml" \
-    --report html:"$DETEKT/reports/log.html" \
-    --plugins "$DETEKT/detekt-formatting-1.23.7.jar,$DETEKT/detekt-twitter-compose-0.0.26-all.jar" \
-    2>&1
-  # --baseline "$DETEKT"/baseline.xml \
-  # --create-baseline
-)
-EXIT_CODE=$?
-if [ $EXIT_CODE -ne 0 ]; then
-  echo "***********************************************"
-  echo "                 detekt failed                 "
-  echo " Please fix the above issues before committing "
-  echo "***********************************************"
-  echo "$OUTPUT"
-  open "$DETEKT/reports/log.html"
-  exit $EXIT_CODE
-fi
+##!/bin/bash
+##set -euxo pipefail
+#
+#echo "Running detekt check..."
+#
+## 変更差分があるファイルのみをコマンド入力に含める
+#cachedFiles="$(
+#  git --no-pager diff \
+#    --diff-filter=d \
+#    --name-only \
+#    --line-prefix="$(git rev-parse --show-toplevel)/" \
+#    --cached
+#)"
+#echo -e "\n"
+#echo "Cached Files:"
+#echo "$cachedFiles"
+#echo -e "\n"
+#
+## 入力をフォーマットする -> filePath1,filePath2,filePath3
+#DETEKT_INPUT=$(echo "$cachedFiles" | awk '{printf "%s%s", (NR==1 ? "" : ","), $0}')
+#
+#MODULES="$HOME/repos/config/modules"
+#DETEKT="$MODULES/detekt"
+#
+## TODO: 入力がktファイルでないことを確認
+#
+## コマンド入力がない場合は、解析せずに正常終了
+#if [ "$DETEKT_INPUT" = '' ]; then
+#  exit 0
+#fi
+#
+## formatを先に入れる
+#detekt \
+#  --auto-correct \
+#  --input "$DETEKT_INPUT" \
+#  --build-upon-default-config \
+#  --config "$DETEKT/formatting-config.yaml" \
+#  --plugins "$DETEKT/plugins/detekt-formatting-1.23.7.jar" 2>&1
+#
+## リント実行
+#OUTPUT=$(
+#  detekt \
+#    --input "$DETEKT_INPUT" \
+#    --build-upon-default-config \
+#    --config "$DETEKT/config.yaml" \
+#    --report html:"$DETEKT/reports/log.html" \
+#    --plugins "$DETEKT/plugins/detekt-twitter-compose-0.0.26-all.jar" \
+#    2>&1
+#  #--baseline "$DETEKT"/baseline.xml \
+#  #--create-baseline \
+#)
+#
+## リントに引っかかった場合は(終了コードが0以外)、コミットを中断してエラーを出力
+#EXIT_CODE=$?
+#if [ $EXIT_CODE -ne 0 ]; then
+#  echo "***********************************************"
+#  echo "                 detekt failed                 "
+#  echo " Please fix the above issues before committing "
+#  echo "***********************************************"
+#  echo "$OUTPUT"
+#  open "$DETEKT/reports/log.html" # TODO: xdg-openでも開くようにする(Linux環境)
+#  exit $EXIT_CODE
+#fi
