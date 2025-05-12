@@ -1,7 +1,5 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <ManuallySuppressedIssues/>
-  <CurrentIssues>
-    <ID>PreviewPublic:ItemUserList.kt$UserListItem_Preview</ID>
-  </CurrentIssues>
+  <CurrentIssues/>
 </SmellBaseline>
