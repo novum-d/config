@@ -7,7 +7,7 @@ local config = {
 		{ family = "JetBrains Nerd Mono" },
 		{ family = "Symbols Nerd Font Mono" },
 	}),
-	font_size = 18,
+	font_size = 16,
 	window_background_opacity = 0.85,
 	use_ime = true,
 	macos_window_background_blur = 20,
