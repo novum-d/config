@@ -88,6 +88,7 @@
     evtest # confirm keybord input event
     gcc
     python3
+    graphviz
   ];
 
   # This value determines the home Manager release that your
