@@ -26,7 +26,7 @@ nmap <leader>cu <Action>(FindUsages)
 nmap <leader>cs <Action>(ActivateStructureToolWindow)
 nmap <leader>cc <Action>(CommentByLineComment)
 nmap <leader>cr <Action>(RenameElement)
-nmap <C-|> <Action>(NextSplitter)
+nmap <C-l> <Action>(NextSplitter)
 nmap <C-h> <Action>(PrevSplitter)
 
 " code jumps
