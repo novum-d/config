@@ -55,6 +55,7 @@
     zoxide
     zellij
     lazygit
+    charles
     xdg-user-dirs # LANG=C xdg-user-dirs --force
     xclip
     fd
@@ -64,16 +65,19 @@
     tre-command
     tree-sitter
     vscode
+    httpie
     neovim
     #neovim-nightly
     # androidStudioPackages.canary
     
     # gui apps
     # albert
+    brave
     anki
     android-studio
     jetbrains.rust-rover
     jetbrains.webstorm
+    koodo-reader
 
     gnome.gnome-tweaks
     typora
@@ -86,9 +90,10 @@
     usbutils # lsusb
     libinput # xwayland
     evtest # confirm keybord input event
-    gcc
+    clang # wasm
     python3
-    graphviz
+    ffmpeg
+    graphviz # plant uml
   ];
 
   # This value determines the home Manager release that your
