@@ -7,22 +7,20 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, lib, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix    # ここで基本設定を読み込む
+          ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
             # Home Manager ユーザ設定
-            home-manager.users.novumd = import ./home.nix {
-              inherit lib;
-            };
+            home-manager.users.novumd = import ./home.nix;
           }
         ];
       };

@@ -9,7 +9,6 @@
 
   # TODO please change the username & home direcotry to your own
   home.username = "novumd";
-  home.homeDirectory = lib.mkForce "/home/novumd";
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
