@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-xinput set-prop 'Logitech G304' 'Device Accel Constant Deceleration' 2.0
