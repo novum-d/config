@@ -3,14 +3,14 @@
 { pkgs, ... }: {
   programs.git = {
     enable = true;
-    userName = "novum-d";
-    userEmail = "hamada.tomoki01@gmail.com";
+    settings.user.name = "novum-d";
+    settings.user.email = "hamada.tomoki01@gmail.com";
 
     # includes = [
     #   { path = "~/.gitlocalconfig"; }
     # ];
 
-    aliases = {
+    settings.aliases = {
       a = "add";
       b = "branch -vv";
       d = "diff";

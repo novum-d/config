@@ -65,7 +65,6 @@
     tree-sitter
     vscode
     httpie
-    neovim
     #neovim-nightly
     # androidStudioPackages.canary
     
@@ -78,7 +77,7 @@
     jetbrains.webstorm
     koodo-reader
 
-    gnome.gnome-tweaks
+    gnome-tweaks
     typora
     discord
     slack
@@ -103,7 +102,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.11";
+  home.stateVersion = "25.05";
 
 
   # Let home Manager install and manage itself.
@@ -119,5 +118,9 @@
 
   programs = {
     google-chrome.enable = true;
+  };
+  programs.neovim = {
+    enable = true;
+    extraPackages = with pkgs; [ elixir erlang ];
   };
 }

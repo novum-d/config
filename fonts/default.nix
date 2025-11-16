@@ -3,19 +3,15 @@
   fonts = {
     fontDir.enable = true;
 
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
 
       # nerdfotns
       # https://www.nerdfonts.com/font-downloads
       # items are inferred from the actual downloaded file name
-      (nerdfonts.override {
-        fonts = [
-          "JetBrainsMono"
-        ];
-      })
+      nerd-fonts.jetbrains-mono
     ];
   };
 }
