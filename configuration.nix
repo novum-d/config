@@ -40,11 +40,9 @@
   networking.networkmanager.enable = true;
 
   # Netowork      
-  # 127.0.0.1 amazon.co.jp
-  # 127.0.0.1 www.amazon.co.jp
   networking.extraHosts = ''
-    127.0.0.1 youtube.com
-    127.0.0.1 www.youtube.com
+    127.0.0.1 amazon.co.jp
+    127.0.0.1 www.amazon.co.jp
     127.0.0.1 mangaraw.ac
     127.0.0.1 www.xvideos.com
     127.0.0.1 jp.spankbang.com

@@ -2,22 +2,23 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-
 if test (uname -s) = Darwin
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     fish_add_path $HOME/Library/Android/sdk/platform-tools
     eval (/opt/homebrew/bin/brew shellenv)
 else
+    set -Ux GTK_IM_MODULE fcitx
+    set -Ux QT_IM_MODULE fcitx
+    set -Ux XMODIFIERS @im=fcitx
+    set -Ux QT_QPA_PLATFORM xcb
 end
 
 fish_add_path $HOME/.cargo/bin
 set -g theme_nerd_fonts yes
 
-
 set RUST_BACKTRACE 1
 set ZELLIJ_CONFIG_FILE $HOME/config/zellij/config.kdl
 set LD_LIBRARY_PATH $NIX_LD_LIBRARY_PATH
-
 
 cp -rf ~/repos/config/nvim ~/.config
 cp -rf ~/repos/config/.wezterm.lua ~/
