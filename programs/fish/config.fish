@@ -7,6 +7,7 @@ if test (uname -s) = Darwin
     fish_add_path $HOME/Library/Android/sdk/platform-tools
     eval (/opt/homebrew/bin/brew shellenv)
 else
+    fish_add_path /nix/store/mibyr0q42jihn6i0xrda79bljkfyrhfs-android-studio-stable-2025.2.1.8-unwrapped/bin
     set -Ux GTK_IM_MODULE fcitx
     set -Ux QT_IM_MODULE fcitx
     set -Ux XMODIFIERS @im=fcitx
