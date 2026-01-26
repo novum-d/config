@@ -1,128 +1,64 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      # ./programs/wezterm
-      ./programs/git
-    ];
+  imports = [
+    ./programs/git
+    # 既存の imports...
+  ];
 
-  # TODO please change the username & home direcotry to your own
-  home.username = "novumd";
-
-  # link the configuration file in current directory to the specified location in home directory
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
-
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
-
-  # set cursor size and dpi for 4k monitor
-  xresources.properties = {
+  # X11 関連の設定は Linux の場合のみ適用
+  xresources.properties = lib.mkIf pkgs.stdenv.isLinux {
     "Xcursor.size" = 16;
     "Xft.dpi" = 172;
   };
 
-  # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
-    
-    # proggramming langage
-    erlang
-    elixir
-    nodePackages.pnpm
-    nodejs
-    rustup
+    fish
+    neovim
+    # --- 共通ツール ---
+    erlang elixir nodePackages.pnpm nodejs rustup
+    zip unzip xz
+    ripgrep fzf zoxide zellij lazygit fd gh ghq tre-command tree-sitter
+    httpie python3 ffmpeg graphviz
+  ] 
+  ++ (if stdenv.isLinux then [
+    # --- Linux 専用 ---
+    vscode slack zoom-us 
+    anki discord typora
+    jetbrains.rust-rover jetbrains.webstorm jetbrains.idea-community
+    xdotool xclip xdg-user-dirs albert brave koodo-reader
+    gnome-tweaks libreoffice
+    pciutils usbutils libinput evtest clang
+    android-studio # macOS では個別にインストールするか Homebrew 経由が安定します
+  ] else [
+    # --- macOS 専用 (必要であれば) ---
+  ]);
 
-    # archives
-    zip
-    unzip
-    xz
-
-    # utils
-    ripgrep # recursively searches directories for a regex pattern
-    fzf # A command-line fuzzy finder
-    zoxide
-    zellij
-    lazygit
-    charles
-    xdg-user-dirs # LANG=C xdg-user-dirs --force
-    xclip
-    fd
-    gh
-    ghq
-    xdotool
-    tre-command
-    tree-sitter
-    vscode
-    httpie
-    #neovim-nightly
-    android-studio
-    
-    # gui apps
-    albert
-    brave
-    anki
-    jetbrains.rust-rover
-    jetbrains.webstorm
-    jetbrains.idea-community
-    koodo-reader
-
-    gnome-tweaks
-    libreoffice
-    typora
-    discord
-    slack
-    zoom-us
-    
-    # system tools
-    pciutils # lspci
-    usbutils # lsusb
-    libinput # xwayland
-    evtest # confirm keybord input event
-    clang # wasm
-    python3
-    ffmpeg
-    graphviz # plant uml
-  ];
-
-  # This value determines the home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update home Manager without changing this value. See
-  # the home Manager release notes for a list of state version
-  # changes in each release.
-  home.stateVersion = "25.11";
-
-
-  # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # programs.neovim.enable = true;
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      . $HOME/repos/config/programs/fish/config.fish;
+      # パスを環境に合わせて調整
+      if test -f $HOME/repos/config/programs/fish/config.fish
+          source $HOME/repos/config/programs/fish/config.fish
+      end
     '';
+    shellInit = "";
+    # config.fishを強制上書き
+    shellAliases = {};
+    loginShellInit = "";
+    functions = {};
+    plugins = [];
   };
-  programs.java.enable = true;
 
-  programs = {
-    google-chrome.enable = true;
-  };
-  programs.neovim = {
+  xdg.configFile."fish/config.fish".force = true;
+
+  programs.java.enable = pkgs.stdenv.isLinux;
+  programs.google-chrome.enable = pkgs.stdenv.isLinux; # macOS では Chrome は公式の .dmg が推奨
+
+  programs.neovim = lib.mkIf pkgs.stdenv.isLinux {
     enable = true;
     extraPackages = with pkgs; [ elixir erlang ];
   };
-
 }

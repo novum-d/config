@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./fonts
-    ];
+    ]
+    ++ (pkgs.lib.optional (!pkgs.stdenv.isDarwin) ./fonts);
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -38,18 +38,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Netowork      
-  networking.extraHosts = ''
-    127.0.0.1 amazon.co.jp
-    127.0.0.1 www.amazon.co.jp
-    127.0.0.1 mangaraw.ac
-    127.0.0.1 www.xvideos.com
-    127.0.0.1 jp.spankbang.com
-    127.0.0.1 jp.redtube.com
-    127.0.0.1 jp.pornhub.com
-    127.0.0.1 jp.xhamster.com
-  '';
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
