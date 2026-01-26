@@ -5,6 +5,7 @@ end
 if test (uname -s) = Darwin
     fish_add_path "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
     fish_add_path $HOME/Library/Android/sdk/platform-tools
+    fish_add_path /run/current-system/sw/bin
     eval (/opt/homebrew/bin/brew shellenv)
     set MACOSX_DEPLOYMENT_TARGET 13.4
 else
@@ -21,7 +22,7 @@ set ANDROID_AVD_HOME $HOME/.android/avd
 # set ZELLIJ_CONFIG_FILE $HOME/repos/config/modules/zellij/config.kdl
 
 # cp -rf ~/repos/config/nvim ~/.config/
-cp -rf ~/repos/config/.wezterm.lua ~/
+# cp -rf ~/repos/config/.wezterm.lua ~/
 cp -rf ~/repos/config/.ideavimrc ~/
 
 zoxide init fish | source
