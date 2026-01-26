@@ -66,15 +66,15 @@
     vscode
     httpie
     #neovim-nightly
-    # androidStudioPackages.canary
+    android-studio
     
     # gui apps
-    # albert
+    albert
     brave
     anki
-    android-studio
     jetbrains.rust-rover
     jetbrains.webstorm
+    jetbrains.idea-community
     koodo-reader
 
     gnome-tweaks
@@ -103,7 +103,7 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
 
   # Let home Manager install and manage itself.
@@ -125,19 +125,4 @@
     extraPackages = with pkgs; [ elixir erlang ];
   };
 
-  programs.dconf.settings = {
-    "org/gnome/desktop/peripherals/touchpad" = {
-      # スクロール速度（-1.0〜1.0）
-      speed = -0.5;
-
-      # 必要に応じて追加オプション
-      natural-scroll = true;   # ナチュラルスクロール
-      tap-to-click = true;     # タップでクリック
-    };
-
-    "org/gnome/desktop/peripherals/mouse" = {
-      speed = 0.0;             # マウス速度
-      natural-scroll = false;  # ナチュラルスクロール off
-    };
-  };
 }
