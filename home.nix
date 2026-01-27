@@ -14,7 +14,7 @@
 
   home.packages = with pkgs; [
     # --- 共通ツール ---
-    fish neovim
+    fish neovim ydiff
     erlang elixir nodePackages.pnpm nodejs rustup
     zip unzip xz
     ripgrep fzf zoxide zellij lazygit fd gh ghq tre-command tree-sitter
