@@ -1,12 +1,14 @@
 
 # Configure common options in nixos and darwin
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.git = {
     enable = true;
 
     # includes = [
     #   { path = "~/.gitlocalconfig"; }
     # ];
+    lfs.enable = true;
 
     settings = {
       user.name = "novum-d";

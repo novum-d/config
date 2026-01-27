@@ -60,21 +60,23 @@
       };
     };
     homeConfigurations = {
-      "novumd@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home.nix ];
-        username = "novumd";
-        homeDirectory = "/home/novumd";
-        stateVersion = "25.11";
-      };
       "t.hamada@t-hamada-5393" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "aarch64-darwin"; };
         extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home.nix ];
-        username = "t.hamada";
-        homeDirectory = "/Users/t.hamada";
-        stateVersion = "25.11";
+        modules = [{
+          home.username = "t.hamada";
+          home.homeDirectory = "/Users/t.hamada";
+          home.stateVersion = "25.11";
+        } ./home.nix ];
+      };
+      "novumd@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        extraSpecialArgs = { inherit inputs; };
+        modules = [{
+          home.username = "novumd";
+          home.homeDirectory = "/home/novumd";
+          home.stateVersion = "25.11";
+        } ./home.nix ];
       };
     };
   };
