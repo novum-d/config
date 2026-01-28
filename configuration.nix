@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-    ]
-    ++ (pkgs.lib.optional (!pkgs.stdenv.isDarwin) ./fonts);
+      ./fonts
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -105,8 +105,17 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+  services.libinput = {
+    enable = true;
+  
+    touchpad = {
+      accelSpeed = "-0.5";
+      # Higher values require more finger movement per scroll step.
+      additionalOptions = ''
+        Option "ScrollPixelDistance" "30"
+      '';
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.novumd = {
@@ -208,4 +217,6 @@
       . $HOME/repos/config/modules/fish/config.fish;
     '';
   };
+
+  home-manager.users.novumd = import ./home.nix;
 }

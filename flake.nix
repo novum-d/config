@@ -3,7 +3,7 @@
 
   inputs = {
     home-manager.url = "github:nix-community/home-manager";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -75,7 +75,7 @@
         modules = [{
           home.username = "novumd";
           home.homeDirectory = "/home/novumd";
-          home.stateVersion = "25.11";
+          home.stateVersion = "unstalbe";
         } ./home.nix ];
       };
     };

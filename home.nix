@@ -14,21 +14,29 @@
 
   home.packages = with pkgs; [
     # --- 共通ツール ---
-    fish neovim ydiff
-    erlang elixir nodePackages.pnpm nodejs rustup
+    rustup
+    pkg-config
+    openssl
+    fish neovim ydiff zoxide
+    erlang elixir nodejs
     zip unzip xz
     ripgrep fzf zoxide zellij lazygit fd gh ghq tre-command tree-sitter
-    httpie python3 ffmpeg graphviz
+    httpie python3 ffmpeg graphviz slack
+    teams-for-linux
+    google-cloud-sdk
+    file
+    jq
   ]
   ++ (if stdenv.isLinux then [
     # --- Linux 専用 ---
     vscode slack zoom-us 
     anki discord typora
-    jetbrains.rust-rover jetbrains.webstorm jetbrains.idea-community
     xdotool xclip xdg-user-dirs albert brave koodo-reader
     gnome-tweaks libreoffice
     pciutils usbutils libinput evtest clang
-    android-studio # macOS では個別にインストールするか Homebrew 経由が安定します
+    android-studio
+    jetbrains.rust-rover
+    desktop-file-utils
   ] else [
     # --- macOS 専用 (必要であれば) ---
   ]);
@@ -56,8 +64,11 @@
   programs.java.enable = pkgs.stdenv.isLinux;
   programs.google-chrome.enable = pkgs.stdenv.isLinux; # macOS では Chrome は公式の .dmg が推奨
 
-  programs.neovim = lib.mkIf pkgs.stdenv.isLinux {
-    enable = true;
-    extraPackages = with pkgs; [ elixir erlang ];
-  };
+  # programs.neovim = lib.mkIf pkgs.stdenv.isLinux {
+  #   enable = true;
+  #   extraPackages = with pkgs; [ elixir erlang ];
+  # };
+
+  home.stateVersion = "25.11";
+  nixpkgs.config.allowUnfree = true;
 }
